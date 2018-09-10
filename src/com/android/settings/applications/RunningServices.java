@@ -15,7 +15,6 @@
  */
 package com.android.settings.applications;
 
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -82,15 +81,12 @@ public class RunningServices extends SettingsPreferenceFragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        ActionBar actionBar = getActivity().getActionBar();
         switch (item.getItemId()) {
             case SHOW_RUNNING_SERVICES:
                 mRunningProcessesView.mAdapter.setShowBackground(false);
-                actionBar.setTitle(R.string.runningservices_settings_title);
                 break;
             case SHOW_BACKGROUND_PROCESSES:
                 mRunningProcessesView.mAdapter.setShowBackground(true);
-                actionBar.setTitle(R.string.background_processes_settings_title);
                 break;
             default:
                 return false;
